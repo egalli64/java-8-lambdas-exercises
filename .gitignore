@@ -7,3 +7,9 @@ target/
 
 # Vim
 *.swp
+/bin/
+
+# Eclipse
+.classpath
+.project
+.settings
