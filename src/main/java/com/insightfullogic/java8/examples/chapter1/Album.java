@@ -1,8 +1,10 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Java 8 Lambdas
+ * @author Richard Warburton
+ * 
+ * Minor changes by
+ * @author manny egalli64@gmail.com
  */
-
 package com.insightfullogic.java8.examples.chapter1;
 
 import java.util.ArrayList;
@@ -24,13 +26,9 @@ public final class Album implements Performance {
     private List<Artist> musicians;
 
     public Album(String name, List<Track> tracks, List<Artist> musicians) {
-        Objects.requireNonNull(name);
-        Objects.requireNonNull(tracks);
-        Objects.requireNonNull(musicians);
-
-        this.name = name;
-        this.tracks = new ArrayList<>(tracks);
-        this.musicians = new ArrayList<>(musicians);
+        this.name = Objects.requireNonNull(name);
+        this.tracks = new ArrayList<>(Objects.requireNonNull(tracks));
+        this.musicians = new ArrayList<>(Objects.requireNonNull(musicians));
     }
 
     /**
@@ -54,6 +52,15 @@ public final class Album implements Performance {
         return unmodifiableList(tracks);
     }
 
+    /**
+     * Simplify filtering of short/long albums
+     * 
+     * @return are there less than four tracks?
+     */
+    public boolean hasFewTracks() {
+        return getTrackList().size() < 4;
+    }
+    
     /**
      * @return the musicians
      */
