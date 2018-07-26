@@ -121,8 +121,4 @@ class ExercisesTest {
         String expected = "Nope";
         assertThat(Exercises.mostLowercase(Arrays.asList(expected, "win")).get(), is(expected));
     }
-
-    @Test
-    void testShorter() {
-    }
 }
