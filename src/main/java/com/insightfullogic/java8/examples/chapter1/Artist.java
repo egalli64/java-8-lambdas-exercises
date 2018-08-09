@@ -19,11 +19,17 @@ import static java.util.stream.Collectors.toList;
  * @author Richard Warburton
  */
 public final class Artist {
+    /**
+     * Null Object Pattern
+     * 
+     * @author manny
+     */
+    public static final Artist EMPTY = new Artist("N/A", "N/A");
     
     private String name;
     private List<Artist> members;
     private String nationality;
-    
+
     public Artist(String name, String nationality) {
         this(name, Collections.emptyList(), nationality);
     }
