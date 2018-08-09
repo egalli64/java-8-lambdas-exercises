@@ -26,6 +26,10 @@ public class SampleData {
     public static final Album manyTrackAlbum = new Album("sample Short Album", asList(new Track("short track", 30), new Track("short track 2", 30), new Track("short track 3", 30), new Track("short track 4", 30), new Track("short track 5", 30)), asList(johnColtrane));
 
     public static Stream<Album> albums = Stream.of(aLoveSupreme);
+    
+    public static Stream<Album> getStreamAlbums() {
+        return Stream.of(aLoveSupreme, manyTrackAlbum);
+    }
 
     public static Stream<Artist> threeArtists() {
         return Stream.of(johnColtrane, johnLennon, theBeatles);
