@@ -85,4 +85,13 @@ public final class Album implements Performance {
         return new Album(name, tracks, musicians);
     }
 
+    /**
+     * Always useful
+     * 
+     * @author manny
+     */
+    @Override
+    public String toString() {
+        return name + " by " + musicians;
+    }
 }
